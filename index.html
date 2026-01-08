@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Barbearia Premium</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+    }
+    header {
+      background: #000;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      color: #ccc;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #f1c40f;
+    }
+    form {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 8px;
+      display: grid;
+      gap: 15px;
+    }
+    input, select, button {
+      padding: 12px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      background: #f1c40f;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #d4ac0d;
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Barbearia Premium</h1>
+  <p>Corte de respeito, estilo de verdade</p>
+</header>
+
+<section>
+  <h2>Nossos Serviços</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Corte Masculino</h3>
+      <p>R$ 30,00</p>
+    </div>
+    <div class="card">
+      <h3>Barba</h3>
+      <p>R$ 25,00</p>
+    </div>
+    <div class="card">
+      <h3>Corte + Barba</h3>
+      <p>R$ 50,00</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Agendar Horário</h2>
+
+  <form onsubmit="enviarWhatsApp(event)">
+    <input type="text" id="nome" placeholder="Seu nome" required>
+
+    <select id="servico" required>
+      <option value="">Escolha o serviço</option>
+      <option value="Corte Masculino">Corte Masculino</option>
+      <option value="Barba">Barba</option>
+      <option value="Corte + Barba">Corte + Barba</option>
+    </select>
+
+    <input type="date" id="data" required>
+    <input type="time" id="hora" required>
+
+    <button type="submit">Agendar pelo WhatsApp</button>
+  </form>
+</section>
+
+<footer>
+  <p>📍 Rua Exemplo, 123 - Centro</p>
+  <p>📞 WhatsApp: (43) 999667259</p>
+  <p>© 2026 Barbearia Premium</p>
+</footer>
+
+<script>
+  function enviarWhatsApp(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const servico = document.getElementById("servico").value;
+    const data = document.getElementById("data").value;
+    const hora = document.getElementById("hora").value;
+
+    const telefone = "43999667259"; // TROQUE pelo WhatsApp do barbeiro
+
+    const mensagem =
+      `Olá, me chamo ${nome}.\n` +
+      `Gostaria de agendar:\n` +
+      `Serviço: ${servico}\n` +
+      `Data: ${data}\n` +
+      `Horário: ${hora}`;
+
+    const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+  }
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
